@@ -1,0 +1,91 @@
+  /* Basic layout and centering */
+ body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to right, #00c6ff, #0072ff); /* Gradient background */
+  }
+/* Container for the form and image */
+.container {
+  text-align: center;
+  
+}
+
+  
+  /* Form container */
+  form {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    margin-top: 20px; /* Space between the image and the form */
+    margin: 24px 0 12px 0;
+  }
+  
+  /* Labels */
+  label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #333;
+  }
+  
+  /* Input fields */
+  input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border 0.3s ease-in-out;
+  }
+  
+  /* Change border color on focus */
+  input:focus {
+    border-color: #0072ff;
+  }
+  
+  /* Error message */
+  div[ngIf] {
+    color: #e74c3c; /* Red for errors */
+    font-size: 12px;
+    margin-top: 5px;
+  }
+
+  .imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+  }
+  
+  img.avatar {
+    width: 15%;
+    border-radius: 50%;
+  }
+  
+  /* Button styling */
+  button {
+    background: #0072ff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  /* Button hover effect */
+  button:hover {
+    background: #005bb5;
+  }
+  
+  /* Additional layout styles for inner divs */
+  div {
+    margin-bottom: 15px;
+  }
+    

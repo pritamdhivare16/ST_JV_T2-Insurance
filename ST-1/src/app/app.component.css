@@ -1,0 +1,25 @@
+.navbar {
+    background-color: #232323; /* Dark background color for the navbar */
+    padding: 10px 20px; /* Vertical padding and horizontal padding */
+    display: flex; /* Use flexbox for layout */
+    justify-content: flex-start; /* Align items to the start (left) */
+    align-items: center; /* Center items vertically */
+    position: fixed; /* Fix the navbar to the top */
+    width: 100%; /* Full width navbar */
+    top: 0; /* Align to the top */
+    left: 0; /* Align to the left */
+}
+  
+  .navbar a {
+    color: #fff; /* White text color for links */
+    text-decoration: none; /* Remove default underline */
+    padding: 10px 20px; /* Padding for links */
+    margin: 0 10px; /* Margin between links */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s ease; /* Smooth transition on hover */
+  }
+  
+  .navbar a:hover {
+    background-color: #555; /* Darker background color on hover */
+  }
+  

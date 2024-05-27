@@ -1,0 +1,102 @@
+
+
+  
+
+  <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()" class="container mt-5">
+    <div class="form-div">
+      <h2 class="form-heading">Registration Form</h2>
+    <div class="form-group">
+      <label>First Name<span class="text-danger">*</span>:</label>
+      <input type="text" formControlName="firstName" class="form-control" />
+      <div *ngIf="registrationForm.get('firstName')?.errors?.['required'] && registrationForm.get('firstName')?.touched" class="text-danger">
+        First name is required.
+      </div>
+      <div *ngIf="registrationForm.get('firstName')?.errors?.['containsNumbersOrSpecialChars'] && registrationForm.get('firstName')?.touched " class="text-danger">
+        First name should not contain numbers or special characters.
+      </div>
+    </div>
+  
+    <div class="form-group">
+      <label>Middle Name<span class="text-danger">*</span>:</label>
+      <input type="text" formControlName="middleName" class="form-control" />
+      <div *ngIf="registrationForm.get('middleName')?.errors?.['required'] && registrationForm.get('middleName')?.touched" class="text-danger">
+        Middle name is required.
+      </div>
+      <div *ngIf="registrationForm.get('middleName')?.errors?.['containsNumbersOrSpecialChars'] && registrationForm.get('middleName')?.touched " class="text-danger">
+        Middle name should not contain numbers or special characters.
+      </div>
+    </div>
+  
+    <div class="form-group">
+      <label>Last Name<span class="text-danger">*</span>:</label>
+      <input type="text" formControlName="lastName" class="form-control" />
+      <div *ngIf="registrationForm.get('lastName')?.errors?.['required'] && registrationForm.get('lastName')?.touched" class="text-danger">
+        Last name is required.
+      </div>
+      <div *ngIf="registrationForm.get('lastName')?.errors?.['containsNumbersOrSpecialChars'] && registrationForm.get('lastName')?.touched " class="text-danger">
+        Last name should not contain numbers or special characters.
+      </div>
+    </div>
+  
+    <div class="form-group">
+      <label>Full Name:</label>
+      <p class="form-control-plaintext">{{ registrationForm.get('fullName')?.value }}</p>
+    </div>
+  
+    <div class="form-group">
+      <label>Mobile Number<span class="text-danger">*</span>:</label>
+      <input type="number" formControlName="phoneNumber" class="form-control" />
+      <div *ngIf="registrationForm.get('phoneNumber')?.errors?.['required'] && registrationForm.get('phoneNumber')?.touched" class="text-danger">
+        Mobile number is required.
+      </div>
+      <div *ngIf="registrationForm.get('phoneNumber')?.errors?.['maxlength'] && registrationForm.get('phoneNumber')?.touched" class="text-danger">
+        Mobile number cannot exceed 10 digits.
+      </div>
+      <div *ngIf="registrationForm.get('phoneNumber')?.errors?.['pattern'] && registrationForm.get('phoneNumber')?.touched" class="text-danger">
+        Invalid mobile number format.
+      </div>
+    </div>
+  
+    <div class="form-group">
+      <label>Photo<span class="text-danger">*</span>:</label>
+      <input type="file" formControlName="photo" class="form-control-file" accept=".jpg,.jpeg,.png" />
+    </div>
+  
+    <div class="form-group">
+      <label>Email<span class="text-danger">*</span>:</label>
+      <input type="email" formControlName="email" class="form-control" />
+      <div *ngIf="registrationForm.get('email')?.errors?.['required'] && registrationForm.get('email')?.touched" class="text-danger">
+        Email is required.
+      </div>
+      <div *ngIf="registrationForm.get('email')?.errors?.['email'] && registrationForm.get('email')?.touched" class="text-danger">
+        Invalid email format.
+      </div>
+    </div>
+  
+    <div class="form-group">
+      <label>Password<span class="text-danger">*</span>:</label>
+      <input type="password" formControlName="password" class="form-control" />
+      <div *ngIf="registrationForm.get('password')?.errors?.['required'] && registrationForm.get('password')?.touched" class="text-danger">
+        Password is required.
+      </div>
+      <div *ngIf="registrationForm.get('password')?.errors?.['minlength'] && registrationForm.get('password')?.touched" class="text-danger">
+        Password must be at least 6 characters long.
+      </div>
+    </div>
+  
+    <div class="form-group">
+      <label>Confirm Password<span class="text-danger">*</span>:</label>
+      <input type="password" formControlName="confirmPassword" class="form-control" />
+      <div *ngIf="registrationForm.get('confirmPassword')?.errors?.['required'] && registrationForm.get('confirmPassword')?.touched" class="text-danger">
+        Confirm password is required.
+      </div>
+      <div *ngIf="registrationForm.get('confirmPassword')?.errors?.['mismatchedPasswords'] && registrationForm.get('confirmPassword')?.touched" class="text-danger">
+        Passwords do not match.
+      </div>
+    </div>
+  
+    <button type="submit" class="btn btn-primary">Register</button>
+  </div>
+  </form>
+ 
+  

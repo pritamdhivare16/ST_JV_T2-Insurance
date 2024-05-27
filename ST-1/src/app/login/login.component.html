@@ -1,0 +1,44 @@
+<br><br>
+<div class="container">
+  <div class="imgcontainer">
+    <img src="../../assets/img_avatar2.png" alt="Avatar" class="avatar">
+  </div>
+<!-- 
+<form (ngSubmit)="loginUser()">
+<div class="container">
+  <label for="uname"><b>Username</b></label>
+  <input type="email" placeholder="Username is your email" name="username" required   [(ngModel)]  = "model.username" />
+
+  <label for="psw"><b>Password</b></label>
+  <input type="password" placeholder="Enter Password" name="password" required  [(ngModel)]   = "model.password" />
+      
+  <button type="submit" >Login</button>
+  
+</div>
+</form> -->
+
+<!--  -->
+
+<!-- login.component.html -->
+<form [formGroup]="loginForm" (ngSubmit)="loginUser()">
+  <div>
+    <label for="email">Username <span style= "color:red;">*</span>:</label>
+    <input id="email" formControlName="email" type="email" placeholder="your email is your username" />
+    <small *ngIf="loginForm.get('email')?.errors?.['required']">Username is required.</small>
+    <small *ngIf="loginForm.get('email')?.errors?.['email']">Invalid email format.</small>
+  </div>
+
+  <div>
+    <label for="password">Password <span style= "color:red;">*</span>:</label>
+    <input id="password" formControlName="password" type="password" />
+    <small *ngIf="loginForm.get('password')?.errors?.['required']">Password is required.</small>
+    <!-- <small *ngIf="loginForm.get('password')?.errors?.['minlength']">
+      Password must be at least {{loginForm.get('password')?.errors?.['minlength']?.requiredLength}} characters long.
+    </small> -->
+  </div>
+
+  <button type="submit">Login</button>
+</form>
+</div>
+
+  
